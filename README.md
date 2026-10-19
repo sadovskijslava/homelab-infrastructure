@@ -1,3 +1,5 @@
+
+
 # 🖥️ HomeLab Infrastructure
 
 ### Linux Servers | Debian | Docker | OpenMediaVault | Networking
@@ -70,6 +72,19 @@ Configured Tailscale to connect devices and provide private remote access to Lin
 Performed practical troubleshooting involving containers, network connectivity, storage paths, application configurations, and service availability.
 
 ---
+
+
+## 📚 Technical Documentation
+
+Explore the detailed technical documentation for each server:
+
+- [HuHServer — Storage, Media & Cloud Services](docs/huhserver.md)
+- [HuHServ2 — Docker & Application Infrastructure](docs/huhserv2.md)
+
+Documentation includes hardware specifications, operating systems, container deployments and administration details.
+
+---
+  
 
 ## 📸 Screenshots and Documentation
 

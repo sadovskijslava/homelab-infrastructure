@@ -88,9 +88,22 @@ Documentation includes hardware specifications, operating systems, container dep
 
 ## 📸 Screenshots and Documentation
 
-Technical screenshots, infrastructure diagrams, and selected configuration examples will be added as the documentation develops.
+The following screenshots showcase the deployed infrastructure, storage management, self-hosted cloud services, media server administration, and Docker environment. Additional architecture diagrams and configuration examples are planned.
 
-Sensitive information such as passwords, access tokens, private keys, and internal network details will not be published.
+### OpenMediaVault — HuHServer
+![HuHServer Dashboard](screenshots/huhserver-omv-dashboard.png)
+
+### OpenMediaVault — HuHServ2
+![HuHServ2 Dashboard](screenshots/huhserv2-omv-dashboard.png)
+
+### Nextcloud — Personal Cloud
+![Nextcloud](screenshots/huhserver-nextcloud.png)
+
+### Jellyfin — Media Server
+![Jellyfin Administration](screenshots/huhserver-jellyfin-admin.png)
+
+### Docker Management
+![Portainer](screenshots/huhserver-portainer-overview.png)
 
 ---
 

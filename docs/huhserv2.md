@@ -191,9 +191,24 @@ The separate document covers the container architecture, image versions, Docker 
 
 ## 6. Other Self-Hosted Applications
 
-### 6.1. Navidrome and Feishin
+### 6.1. Navidrome and Feishin — Private Music Services
 
-Navidrome provides a self-hosted music library and streaming interface, while Feishin is used as a music client. This demonstrates practical Docker hosting of media applications. A dedicated technical case study is planned.
+Navidrome and Feishin run as **independent Docker Compose projects** on HuHServ2. The Docker container inspection on October 22, 2026 showed:
+
+| Service | Image | Local published port | Docker network |
+|---|---|---|---|
+| Navidrome | `deluan/navidrome:latest` | `127.0.0.1:4533` | `navidrome_default` |
+| Feishin | `ghcr.io/jeffvli/feishin:latest` | `127.0.0.1:9180` | `feishin_default` |
+
+Both containers were running and configured with the `unless-stopped` restart policy. Local HTTP checks returned `302` for Navidrome and `200` for Feishin. Tailscale Serve exposed two **tailnet-only** HTTPS routes; neither route was marked as a public Funnel endpoint.
+
+The browser screenshots demonstrate an album library in Navidrome and a populated music player interface in Feishin. End-to-end authenticated playback and API integration have not yet been independently tested.
+
+![Navidrome Album Library](../screenshots/huhserv2-navidrome-albums.png)
+
+![Feishin Music Client](../screenshots/huhserv2-feishin-library.png)
+
+**[Read the Navidrome and Feishin Technical Case Study](music-services-deployment.md)**
 
 ### 6.2. Game Dev Hub — Web Application and Background Worker
 
@@ -324,6 +339,10 @@ Game Dev Hub required `docker exec ... tailscale --socket=/tmp/tailscaled.sock` 
 | Game Dev Hub Tailscale Funnel | Configured and enabled |
 | Game Dev Hub Tailscale socket diagnosis | Confirmed `/tmp/tailscaled.sock` |
 | Game Dev Hub project and studio interfaces | Screenshots captured |
+| Navidrome and Feishin Docker and Compose metadata | Inspected on October 22 |
+| Navidrome and Feishin local HTTP | `302` / `200`, respectively |
+| Navidrome and Feishin Tailscale Serve | Both routes marked tailnet only |
+| Navidrome and Feishin application interfaces | Screenshots captured |
 
 These are dated observations, not an uptime guarantee, security audit, or performance certification.
 
@@ -337,7 +356,8 @@ These are dated observations, not an uptime guarantee, security audit, or perfor
 - [x] Customize the Homepage interface.
 - [x] Document the Penpot deployment and Tailnet-only Serve configuration.
 - [x] Document Game Dev Hub containers, networking, Funnel configuration and socket troubleshooting.
-- [ ] Document the Navidrome and Feishin deployment.
+- [x] Document the Navidrome and Feishin deployment and Tailnet-only access.
+- [ ] Verify Feishin-to-Navidrome playback end to end.
 - [ ] Document sanitized Docker Compose examples.
 - [ ] Measure resources under normal workloads.
 - [ ] Verify OpenMediaVault installation details.

@@ -143,6 +143,19 @@ The case study also documents troubleshooting a nonstandard Tailscale daemon soc
 **[Read the Game Dev Hub Deployment Case Study](docs/game-dev-hub-deployment.md)**  
 **[View Studio Management Screenshot](screenshots/huhserv2-game-dev-hub-studios.png)**
 
+### 6. Music Services — Navidrome & Feishin
+
+HuHServ2 hosts Navidrome and Feishin as separately managed Docker Compose projects. Navidrome serves the music library, while Feishin provides a browser-based music interface.
+
+Both services have loopback-bound host ports and **private Tailscale Serve** HTTPS routes (Tailnet only). On October 22, Navidrome returned HTTP `302` and Feishin returned HTTP `200` locally. Their browser interfaces displayed populated music libraries.
+
+The case study documents the independent Docker networks, port mappings, verification commands, a Mermaid access diagram, and remaining integration tests.
+
+![Feishin Music Client](screenshots/huhserv2-feishin-library.png)
+
+**[Read the Music Services Case Study](docs/music-services-deployment.md)**  
+**[View Navidrome Album Library](screenshots/huhserv2-navidrome-albums.png)**
+
 ---
 
 ## ⚙️ Administration and Technical Experience
@@ -179,6 +192,7 @@ Detailed technical information is maintained in separate Markdown documents.
 | **[HuHServ2](docs/huhserv2.md)** | Docker workloads, server administration, networking, and application infrastructure |
 | **[Penpot Deployment](docs/penpot-deployment.md)** | Seven-container deployment, Docker networking, Tailscale Serve, and architecture diagram |
 | **[Game Dev Hub Deployment](docs/game-dev-hub-deployment.md)** | Docker Compose, background worker, public Tailscale Funnel, troubleshooting, and architecture diagram |
+| **[Music Services](docs/music-services-deployment.md)** | Navidrome and Feishin, Docker networks, private Tailscale Serve, and HTTP checks |
 
 The documentation contains observed configurations and technical evidence from the personal homelab.
 
@@ -200,6 +214,8 @@ The documentation contains observed configurations and technical evidence from t
 | Penpot | [Project Dashboard](screenshots/huhserv2-penpot-projects.png) |
 | Game Dev Hub | [Project Dashboard](screenshots/huhserv2-game-dev-hub-project.png) |
 | Game Dev Hub | [Studio Management](screenshots/huhserv2-game-dev-hub-studios.png) |
+| Navidrome | [Album Library](screenshots/huhserv2-navidrome-albums.png) |
+| Feishin | [Music Client](screenshots/huhserv2-feishin-library.png) |
 
 Screenshots represent observed application states at the time they were captured.
 
@@ -214,6 +230,7 @@ Screenshots represent observed application states at the time they were captured
 - [x] Create a customized infrastructure dashboard.
 - [x] Document the Penpot multi-container deployment.
 - [x] Document Game Dev Hub architecture and Tailscale Funnel routing.
+- [x] Document Navidrome and Feishin Docker services with Tailnet-only routes.
 - [ ] Publish more real troubleshooting case studies.
 - [ ] Verify and document backup and restore procedures.
 - [ ] Expand performance monitoring documentation.

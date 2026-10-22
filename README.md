@@ -43,6 +43,16 @@ Remote connectivity is provided through Tailscale, with selected applications ac
 
 ---
 
+
+## 🗺️ Infrastructure Architecture
+
+The homelab consists of two physical Debian servers
+with Docker workloads, private networking, and
+self-hosted applications.
+
+**[View Two-Server Architecture](docs/infrastructure-architecture.md)**
+
+
 ## 🛠️ Technology Stack
 
 | Category | Technologies |
@@ -234,7 +244,7 @@ Screenshots represent observed application states at the time they were captured
 - [ ] Publish more real troubleshooting case studies.
 - [ ] Verify and document backup and restore procedures.
 - [ ] Expand performance monitoring documentation.
-- [ ] Create a complete two-server architecture diagram.
+- [x] Create a complete two-server architecture diagram.
 - [ ] Continue developing a professional Linux administration portfolio.
 
 ---
